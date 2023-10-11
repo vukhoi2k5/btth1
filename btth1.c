@@ -24,8 +24,18 @@ int tinh_tich(int x,int y)
 float tinh_thuong(int x ,int y)
 {
     float thuong;
-    thuong =(float )x / y;
-    return thuong;
+    if(y != 0)
+    {
+        thuong =(float )x / y;
+        return thuong;
+    }
+    else
+    {
+        printf("Error: Division by zero\n");
+        return 0;
+    }
+
+
 }
 int main()
 {
@@ -62,7 +72,9 @@ int main()
             thuong = tinh_thuong(x ,y);
             printf("Division : %f\n",thuong);
             break;
-    }
+        default:
+            printf("Invalid operator\n");
+            break;    }
     return 0;
 
 }
